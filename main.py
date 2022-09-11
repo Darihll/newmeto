@@ -10,7 +10,7 @@ from upload_client import upload
 from download import download
 import urllib.parse
          
-app = Client('uclvcloud',api_id=9024532,api_hash='131b576240be107210aace99a5f5c5b0',bot_token='55322293465:AAHuLE4_1D2C6SkVDF8M6F2sPacn02EwFm0')
+app = Client('uclvcloud',api_id=9520699,api_hash='353e5b6ef2c174d0e8d7fb62e277840d',bot_token='55322293465:AAHuLE4_1D2C6SkVDF8M6F2sPacn02EwFm0')
 @app.on_message(filters.private & filters.text)
 async def home(client, message):
 		text = message.text
@@ -79,7 +79,7 @@ async def home(client, message):
 					start = "***UclvCloud 2*** \n User: "+username.read()+" \n Pass: "+password.read()+"\n Proxy activado"
 			await app.send_message(user_id, start, reply_markup=InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton("CAMBIAR CUENTA",callback_data="account:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("PROXY",callback_data="proxy:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("VER ARCHIVOS",callback_data="files:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("AYUDA",callback_data="help:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("Studio Kanami", url="https://t.me/studiokanami")]
+            [InlineKeyboardButton("CAMBIAR CUENTA",callback_data="account:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("PROXY",callback_data="proxy:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("VER ARCHIVOS",callback_data="files:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("AYUDA",callback_data="help:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("bladimirlorenzo", url="https://t.me/bladimirlorenzo")]
         ]))
 		elif "socks5://" in text:
         			log = open(str(user_id)+"log","r")
@@ -105,7 +105,7 @@ async def home(client, message):
         			await app.delete_messages(user_id, msg_id)
         			await app.send_message(user_id, start, reply_markup=InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton("CAMBIAR CUENTA",callback_data="account:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("PROXY",callback_data="proxy:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("VER ARCHIVOS",callback_data="files:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("AYUDA",callback_data="help:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("Studio Kanami", url="https://t.me/studiokanami")]
+            [InlineKeyboardButton("CAMBIAR CUENTA",callback_data="account:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("PROXY",callback_data="proxy:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("VER ARCHIVOS",callback_data="files:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("AYUDA",callback_data="help:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("bladimirlorenzo", url="https://t.me/bladimirlorenzo")]
         ]))
 		elif ":" in text:
 		      	log = open(str(user_id)+"log","r")
@@ -139,7 +139,7 @@ async def home(client, message):
 		      			await app.delete_messages(user_id, msg_id)
 		      			await app.send_message(user_id, start, reply_markup=InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton("CAMBIAR CUENTA",callback_data="account:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("PROXY",callback_data="proxy:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("VER ARCHIVOS",callback_data="files:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("AYUDA",callback_data="help:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("Studio Kanami", url="https://t.me/studiokanami")]
+            [InlineKeyboardButton("CAMBIAR CUENTA",callback_data="account:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("PROXY",callback_data="proxy:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("VER ARCHIVOS",callback_data="files:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("AYUDA",callback_data="help:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("bladimirlorenzo", url="https://t.me/bladimirlorenzo")]
         ]))
 		      	if "account" in logr:
 		      		username = open(str(user_id)+"/username", "w")
@@ -166,7 +166,7 @@ async def home(client, message):
 		      		await app.delete_messages(user_id, int(msg_id) - 1)
 		      		await app.send_message(user_id, start, reply_markup=InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton("CAMBIAR CUENTA",callback_data="account:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("PROXY",callback_data="proxy:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("VER ARCHIVOS",callback_data="files:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("AYUDA",callback_data="help:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("Studio Kanami", url="https://t.me/studiokanami")]
+            [InlineKeyboardButton("CAMBIAR CUENTA",callback_data="account:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("PROXY",callback_data="proxy:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("VER ARCHIVOS",callback_data="files:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("AYUDA",callback_data="help:"+str(user_id)+":"+str(msg_id))],[InlineKeyboardButton("bladimirlorenzo", url="https://t.me/bladimirlorenzo")]
         ]))
 @app.on_callback_query()
 async def answer(client, callback_query):
@@ -174,7 +174,7 @@ async def answer(client, callback_query):
 	if 'help' in data:
 		data = data.split(":")
 		await app.delete_messages(data[1], int(data[2]) + 1)
-		await app.send_message(data[1],"__Desarrollo de **Kanami Studios**__ \n\n **¿Usted tiene un correo de la uclv?** \n __Parecido a__ `kanami@uclv.cu` __, bueno..., si lo tiene felicidades con este bot puede hacer de ese correo su nube personal de descargas gratis en Cuba. \n Envíe un enlace para empezar la descarga de este en el bot para ser subido a su correo, el tamaño de las partes de los zips es automaticamente 48 MB.__ \n\n__El usuario y contraseña se editan en **CAMBIAR USUARIO** del menú, el formato del usuario es kanami@uclv.cu y el de la contraseña @Kanami0__\n\n__En **VER ARCHIVOS** usted puede ver y eliminar sus archivos en el correo para conservar el almacenamiento que debería ser de 1.95 GB__\n\n **__Para subir archivos use las hora de 11:00 pm : 11:00 am__**\n\n **Es hora de descargar gratis!!**", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("CANCELAR",callback_data="cancel:"+str(data[1])+":"+str(data[2]))]]))
+		await app.send_message(data[1],"__Desarrollo de **bladimirlorenzo**__ \n\n **¿Usted tiene un correo de la uclv?** \n __Parecido a__ `kanami@uclv.cu` __, bueno..., si lo tiene felicidades con este bot puede hacer de ese correo su nube personal de descargas gratis en Cuba. \n Envíe un enlace para empezar la descarga de este en el bot para ser subido a su correo, el tamaño de las partes de los zips es automaticamente 48 MB.__ \n\n__El usuario y contraseña se editan en **CAMBIAR USUARIO** del menú, el formato del usuario es kanami@uclv.cu y el de la contraseña @Kanami0__\n\n__En **VER ARCHIVOS** usted puede ver y eliminar sus archivos en el correo para conservar el almacenamiento que debería ser de 1.95 GB__\n\n **__Para subir archivos use las hora de 11:00 pm : 11:00 am__**\n\n **Es hora de descargar gratis!!**", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("CANCELAR",callback_data="cancel:"+str(data[1])+":"+str(data[2]))]]))
 	if 'account' in data:
 		data = data.split(":")
 		log = open(str(data[1])+"log","w")
@@ -223,7 +223,7 @@ async def answer(client, callback_query):
 		await app.delete_messages(data[1],int(data[2]) + 2)
 		await app.send_message(data[1] ,start, reply_markup=InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton("CAMBIAR CUENTA",callback_data="account:"+str(data[1])+":"+str(int(data[2])))],[InlineKeyboardButton("PROXY",callback_data="proxy:"+str(data[1])+":"+str(int(data[2])))],[InlineKeyboardButton("VER ARCHIVOS",callback_data="files:"+str(data[1])+":"+str(int(data[2])))],[InlineKeyboardButton("AYUDA",callback_data="help:"+str(data[1])+":"+str(int(data[2])))],[InlineKeyboardButton("Studio Kanami", url="https://t.me/studiokanami")]
+            [InlineKeyboardButton("CAMBIAR CUENTA",callback_data="account:"+str(data[1])+":"+str(int(data[2])))],[InlineKeyboardButton("PROXY",callback_data="proxy:"+str(data[1])+":"+str(int(data[2])))],[InlineKeyboardButton("VER ARCHIVOS",callback_data="files:"+str(data[1])+":"+str(int(data[2])))],[InlineKeyboardButton("AYUDA",callback_data="help:"+str(data[1])+":"+str(int(data[2])))],[InlineKeyboardButton("bladimirlorenzo", url="https://t.me/bladimirlorenzo")]
         ]))
  
 print("Iniciado")
